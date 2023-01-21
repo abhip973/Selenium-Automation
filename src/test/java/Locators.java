@@ -18,7 +18,6 @@ public class Locators {
         driver.findElement(By.className("submit")).click();
         String errorText = driver.findElement(By.cssSelector("p.error")).getText();
         System.out.println(errorText);
-
         driver.quit();
     }
 }
