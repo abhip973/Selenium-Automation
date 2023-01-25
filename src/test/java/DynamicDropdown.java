@@ -12,7 +12,11 @@ public class DynamicDropdown {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
         driver.findElement(By.xpath("(//span[contains(@id,'originStation')])[1]")).click();
+        driver.findElement(By.linkText("Amritsar (ATQ)")).click();
+
         Thread.sleep(2000);
+
+        driver.findElement(By.linkText("Guwahati (GAU)")).click();
 
     }
 }
