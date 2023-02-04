@@ -3,7 +3,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -15,6 +14,9 @@ public class Calendar {
         driver.get("https://www.path2usa.com/travel-companion/");
 
         String selectedDate = "23";
+        String selectedMonth = "January";
+        String year = "2029";
+
         driver.manage().window().maximize();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -25,7 +27,22 @@ public class Calendar {
 
         driver.findElement(By.cssSelector("input[id*='travel_comp_date']")).click();
 
+        //Setting month
+        String month = driver.findElement(By.cssSelector("div.flatpickr-month")).getText();
+        for (int i = 0; i < 11; i++) {
+            if (month.equalsIgnoreCase(selectedMonth)) {
+                break;
+            } else {
+                driver.findElement(By.xpath("//span[@class='flatpickr-next-month']")).click();
+            }
+        }
 
+
+        //Setting year
+        driver.findElement(By.cssSelector(".numInput.cur-year")).clear();
+        driver.findElement(By.cssSelector(".numInput.cur-year")).sendKeys(year);
+
+        //Setting Date
         List<WebElement> dates = driver.findElements(By.cssSelector(".flatpickr-day"));
 
         for (int i = 0; i < dates.size(); i++) {
@@ -37,5 +54,6 @@ public class Calendar {
 
         }
 
+        driver.close();
     }
 }
