@@ -24,13 +24,18 @@ public class Miscellanous {
 
         driver.get("https://www.google.com/");
 
-        //To take screenshot
+        //Steps to take screenshot
+
+        //Casting driver object to TakeScreenshot method
         TakesScreenshot screenshot = ((TakesScreenshot) driver);
 
+        //Now, we'll capture our screenshot and store it in our source file
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
 
+        //Now, we'll create a new file in our destination folder
         File destFile = new File("src/screenshot/test.png");
 
+        //Now, we'll copy our source file to our destination, so we can see it in the folder
         FileUtils.copyFile(srcFile,destFile);
 
         driver.close();
