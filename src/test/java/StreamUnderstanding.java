@@ -3,6 +3,7 @@ import org.testng.asserts.SoftAssert;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamUnderstanding {
@@ -26,6 +27,8 @@ public class StreamUnderstanding {
         StreamNames(names);
         StreamMap();
         System.out.println("Number of names starting with alphabet A are " + namesCount);
+
+        StreamCollect();
     }
 
     public static Long StreamFilter(List<String> names) {
@@ -68,7 +71,7 @@ public class StreamUnderstanding {
 
         Stream<String> namesMerged = (Stream.concat(schoolFriendsStream, names.stream()));
 
-        System.out.println("After streams are merged, names in sorted order is as follows");
+//        System.out.println("After streams are merged, names in sorted order is as follows");
 //        namesMerged.sorted().forEach(s -> System.out.println(s));
 
         //Verify if any given name is present in our stream
@@ -77,6 +80,20 @@ public class StreamUnderstanding {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(flag);
         softAssert.assertAll();
+
+    }
+
+    public static void StreamCollect() {
+        //Convert the filtered record to the list for later use
+        List<String> namesEndingWithK = Stream.of("Ekansh", "Vinayak", "Kartik", "Nirbhay").filter(s -> s.endsWith("k")).collect(Collectors.toList());
+
+        System.out.println(namesEndingWithK.get(0));
+
+        //Print unique numbers from an array, sort it and then print the 3rd value
+        Integer[] values = {1, 56, 2, 76, 22, 46, 35, 7, 13, 13, 46};
+        List<Integer> valuesList = Arrays.asList(values);
+        List<Integer> sortedValuesList = valuesList.stream().distinct().sorted().collect(Collectors.toList());
+        System.out.println(sortedValuesList.get(2));
 
     }
 }
