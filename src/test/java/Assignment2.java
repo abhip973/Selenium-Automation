@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 public class Assignment2 {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","src/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://rahulshettyacademy.com/angularpractice/");
