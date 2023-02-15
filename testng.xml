@@ -3,8 +3,24 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="Personal Loan">
         <classes>
-            <class name="TestNgFramework.Day1"/>
+            <class name="TestNgFramework.Day1">
+                <methods>
+                    <include name="FirstTest"/>
+                </methods>
+            </class>
+
             <class name="TestNgFramework.Day2"/>
+            <class name="TestNgFramework.Day4"/>
+        </classes>
+    </test>
+    <test name="Home Loan">
+        <classes>
+            <class name="TestNgFramework.Day3">
+                <methods>
+                    <exclude name="Mobile.*"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
+
