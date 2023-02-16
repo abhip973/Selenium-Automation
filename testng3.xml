@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Smoke Test">
+
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="TestNgFramework.Day1"/>
+            <class name="TestNgFramework.Day2"/>
+            <class name="TestNgFramework.Day3"/>
+            <class name="TestNgFramework.Day4"/>
+        </classes>
+    </test>
+</suite>
+
