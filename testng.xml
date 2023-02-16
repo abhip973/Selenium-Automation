@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+
+    <parameter name="URL" value="https://rahulshettyacademy.com/"/>
+
     <test verbose="2" preserve-order="true" name="Personal Loan">
         <classes>
             <class name="TestNgFramework.Day1">
@@ -17,7 +20,7 @@
         <classes>
             <class name="TestNgFramework.Day3">
                 <methods>
-                    <exclude name="Mobile.*"/>
+                    <exclude name="Mobile4LoginHomeLoan"/>
                 </methods>
             </class>
         </classes>
