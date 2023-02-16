@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="tests" thread-count="10">
 
     <parameter name="URL" value="https://rahulshettyacademy.com/"/>
+
+    <listeners>
+        <listener class-name="TestNgFramework.Listeners"/>
+    </listeners>
 
     <test verbose="2" preserve-order="true" name="Personal Loan">
         <classes>
